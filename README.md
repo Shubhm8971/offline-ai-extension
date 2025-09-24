@@ -12,7 +12,13 @@ A Chrome extension that highlights text on any webpage and produces a **local mo
 ---
 
 ## 🗂 Project Structure
-
+offline-ai-extension/
+│
+├── manifest.json # Extension configuration
+├── popup.html # UI shown when clicking the extension icon
+├── popup.js # Handles summarize button and display
+├── content.js # Injected into pages to grab selected text
+└── README.md # This file
 ---
 
 ## 🚀 Installation & Testing
