@@ -1,17 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Offline AI Demo</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Offline AI Extension</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h2>Offline AI Demo</h2>
+
+  <textarea id="input-text" placeholder="Enter text here..."></textarea>
+
   <button id="summarizeBtn">Summarize</button>
   <button id="translateBtn">Translate</button>
   <button id="proofreadBtn">Proofread</button>
+  <button id="rewriteBtn">Rewrite</button>
   <button id="transcribeBtn">Transcribe</button>
-  <div id="summaryOutput" class="output"></div>
+  <button id="multimodalBtn">Upload Image/Audio</button>
+  <button id="settingsBtn">Settings</button>
 
+  <div id="summaryOutput" class="output"></div>
+  <div id="result"></div>
+
+  <!-- JS files -->
   <script src="popup.js"></script>
+  <script src="summarize.js"></script>
+  <script src="translate.js"></script>
+  <script src="proofread.js"></script>
+  <script src="rewrite.js"></script>
+  <script src="multimodal.js"></script>
+  <script src="settings.js"></script>
+  <script src="performance.js"></script>
+  <script src="test-content.js"></script>
+  <script src="documentation.js"></script>
 </body>
 </html>
