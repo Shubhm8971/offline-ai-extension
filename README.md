@@ -1,38 +1,47 @@
-# \# Offline AI Extension – Mock Summary Feature
+# Offline AI Summarizer (Local Mock Version)
 
-# 
+A Chrome extension that highlights text on any webpage and produces a **local mock summary**—no external APIs required.
 
-# This branch introduces a fully local mock summarizer to avoid dependency on Chrome’s built-in AI.
+---
 
-# 
+## ✨ Features
+- **Context-menu summarization**: Select text on any webpage and click the extension button to get a summary.
+- **100% local**: No network calls or third-party APIs.
+- **Simple architecture**: Clear separation between `popup.js` and `content.js` for easy future upgrades.
 
-# \## What’s Included
+---
 
-# \- \*\*popup.html / popup.js\*\*: UI and logic for the mock summary.
+## 🗂 Project Structure
+offline-ai-extension/
+│
+├── manifest.json # Extension configuration  
+├── popup.html # UI shown when clicking the extension icon  
+├── popup.js # Handles summarize button and display  
+├── content.js # Injected into pages to grab selected text  
+└── README.md # This file
 
-# \- \*\*content.js\*\*: Sends selected text back to the popup.
+---
 
-# \- No external APIs or icons required.
+## 🚀 Installation & Testing
+1. **Download or clone** this repository.  
+2. Open **Chrome** → go to `chrome://extensions/`.  
+3. Enable **Developer Mode** (top right).  
+4. Click **Load unpacked** and select the project folder.  
+5. Navigate to any webpage, select some text, click the extension icon, and hit **Summarize**.
 
-# 
+---
 
-# \## How to Test
+## 🛠 Future Upgrades
+- Swap the mock summarizer in `popup.js` with a real AI API (e.g., Chrome Built-in AI or OpenAI API).  
+- Keep the modular structure: only update the summarization logic, not the messaging flow.
 
-# 1\. Load the extension in Chrome:
+---
 
-# &nbsp;  - Go to `chrome://extensions`.
+## 📌 Notes
+This is a local mock; replace the summarizer logic later when a real AI API is available.
 
-# &nbsp;  - Enable \*\*Developer mode\*\*.
+---
 
-# &nbsp;  - Click \*\*Load unpacked\*\* and select this folder.
-
-# 2\. Open any webpage, select some text, and click \*\*Summarize\*\* in the popup.
-
-# 
-
-# \## Notes
-
-# \- This is a local mock; replace the summarizer logic later when a real AI API is available.
-
-
-
+## 👩‍💻 Credits
+Built by **Shubh Mittal** and team.  
+Feedback and contributions welcome!
