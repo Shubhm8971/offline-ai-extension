@@ -43,5 +43,5 @@ This is a local mock; replace the summarizer logic later when a real AI API is a
 ---
 
 ## 👩‍💻 Credits
-Built by **Shubh Mittal** and team.  
+Built by **Shubh Mittal** and **Aldina Karic**.  
 Feedback and contributions welcome!
