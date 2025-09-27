@@ -1,32 +1,22 @@
-// Send messages to content script when buttons clicked
-document.getElementById('summarizeBtn').addEventListener('click', () => {
-  sendMessageToContent("SUMMARIZE_TEXT");
+document.getElementById('transcribe-btn').addEventListener('click', async () => {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'audio/*';
+  
+  input.onchange = () => {
+    const file = input.files[0];
+    if (!file) {
+      alert("No file selected!");
+      return;
+    }
+    
+    // Mock transcription output
+    const reader = new FileReader();
+    reader.onload = () => {
+      document.getElementById('result').innerText = `[Mock] Transcription of ${file.name} successful!\nThis is dummy text.`;
+    };
+    reader.readAsArrayBuffer(file);
+  };
+  
+  input.click();
 });
-
-document.getElementById('translateBtn').addEventListener('click', () => {
-  sendMessageToContent("TRANSLATE_TEXT");
-});
-
-document.getElementById('proofreadBtn').addEventListener('click', () => {
-  sendMessageToContent("PROOFREAD_TEXT");
-});
-
-document.getElementById('transcribeBtn').addEventListener('click', () => {
-  sendMessageToContent("TRANSCRIBE_AUDIO");
-});
-
-function sendMessageToContent(type) {
-  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    chrome.tabs.sendMessage(tabs[0].id, { type }, (response) => {
-      if (chrome.runtime.lastError) {
-        alert("Content script not available on this page. Open a normal webpage.");
-        return;
-      }
-      if (response.error) {
-        alert(response.error);
-      } else {
-        document.getElementById('summaryOutput').innerText = response.result;
-      }
-    });
-  });
-}
