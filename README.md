@@ -1,61 +1,65 @@
-# Offline AI Extension
+🧩 Offline AI Chrome Extension
 
-A Chrome extension that demonstrates **fully local AI-like features** (mock summary, translate, proofread, etc.) without relying on any external API calls.  
-Built for the Lablab hackathon as a proof-of-concept for privacy-friendly, offline-first AI tools.
+ An example of offline AI-style actions using a lightweight Chrome extension that operates locally within the browser without requiring calls to an external API.
+ Ideal for hackathon demos and quick prototyping.
 
----
+ Features
 
-## ✨ Features
-- **Summarize Selected Text** – Quickly produce a short summary of highlighted content.
-- **Translate / Proofread / Rewrite** – Buttons prepared for future real AI integrations.
-- **Local Mock AI** – Current version generates a lightweight, on-device “summary” (first couple of sentences) so it works without internet or API keys.
+ For now, all operations are carried out locally using fictitious logic (real AI APIs will be available later):
 
----
+ Feature Description Synopsis gives back a brief fictitious synopsis of the chosen text.
+ Translate displays the highlighted text's placeholder translation.
+ Proofread offers basic spelling and grammar corrections.
+ Rewrite displays a revised version of the text.
+ Multimodal transcription displays a mock response or sample transcript after accepting an image or audio upload.
+ Configuration placeholder for the theme and preferences of a future configuration.
 
-## 🛠️ Tech Stack
-- **Frontend:** Vanilla JavaScript, HTML5, CSS3  
-- **Browser:** Chrome/Chromium-based (tested on Chrome Canary)  
-- **Extension Type:** Manifest V3
+ For the time being, all processing is local, which is perfect for UI/UX testing without incurring API fees or raising privacy issues.
 
----
+ 📂 Project Structure extension/ ├─ manifest.json ├─ popup.html ├─ # User interface with all buttons (Translate, Summarize, etc.) ├─ popup.js ├─ # Manages button clicks and simulated responses ├─ content.js ├─ * Injected into pages to capture selected text ├─ styles.css ├─ # Shared styling for the popup
 
-## 🚀 Installation
-1. Clone or download this repository:
-   ```bash
-   git clone https://github.com/shubhm8971/offline-ai-extension.git
-   Open chrome://extensions in your Chromium/Chrome browser.
+ 🚀 Beginning
 
-Enable Developer mode (toggle in the top-right).
+ Make a copy of the repository
 
-Click Load unpacked and select the extension folder.
+ https://github.com/<your-org>/<repo-name> git clone. git cd <repo-name>/extension
 
-The extension will appear in your toolbar. Pin it for quick access.
-▶️ Usage
 
-Navigate to any webpage.
+ Open Chrome and load the extension.
 
-Highlight text you’d like to “summarize.”
+ Visit chrome://extensions/.
 
-Click the extension icon → Summarize.
+ Turn on developer mode (top-right toggle).
 
-View the locally generated mock summary instantly.
+ Choose the extension folder by clicking Load Unpacked.
 
-🔮 Future Plans
+ Utilize It
 
-Replace mock summary with real Chrome Built-in AI or a local LLM (e.g. WebGPU/WebNN).
+ Go to any website.
 
-Add real translation, proofreading, and multimodal (image/audio) support.
+ Tech Stack
 
-React-based UI for better code organization.
+ JavaScript, HTML, and CSS
 
-🤝 Contributing
+ The Chrome Extensions API (Manifest V3) is made to allow for the eventual plugging in of actual AI APIs.
 
-Pull requests are welcome!
-Please open an issue first to discuss major changes or enhancements.
+ 🌱 Roadmap
 
-📄 License
+  When Chrome Built-in AI (Gemini Nano) is made available to the public, integrate it.
 
-MIT
+  Include language and tone settings that can be changed by the user.
 
-Built with ❤️ by the Offline AI Extension team during the Google hackathon.
+  Use React to enhance user interface (work in progress).
 
+ Participating
+
+ We welcome pull requests!
+ Before making significant changes, open an issue to talk about your ideas.
+
+ 📜 Permit
+
+ Use, alteration, and distribution are all permitted under the MIT License.
+
+ To test text-based features, highlight text.
+
+ Try using buttons like Summarize, Translate, and others after clicking the icon of the extension.
