@@ -32,7 +32,6 @@ document.getElementById('rewrite-btn').addEventListener('click', () => {
 
 // Transcribe / Upload Image/Audio
 document.getElementById('transcribe-btn').addEventListener('click', () => {
-  // OPEN FILE PICKER directly, no text checks
   const fileInput = document.createElement('input');
   fileInput.type = 'file';
   fileInput.accept = 'audio/*,image/*';
