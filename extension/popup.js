@@ -1,41 +1,38 @@
 const inputText = document.getElementById('input-text');
 const resultDiv = document.getElementById('result');
 
-// Summarize button
+// Summarize
 document.getElementById('summarize-btn').addEventListener('click', () => {
   const text = inputText.value.trim();
   if (!text) return alert("Please enter some text first!");
-  // Mock summary
   const summary = text.split('.').slice(0, 2).join('.') + '...';
   resultDiv.innerText = `Summary:\n${summary}`;
 });
 
-// Translate button
+// Translate
 document.getElementById('translate-btn').addEventListener('click', () => {
   const text = inputText.value.trim();
   if (!text) return alert("Please enter some text first!");
-  // Mock translation
   resultDiv.innerText = `Translation (mock):\n${text.split('').reverse().join('')}`;
 });
 
-// Proofread button
+// Proofread
 document.getElementById('proofread-btn').addEventListener('click', () => {
   const text = inputText.value.trim();
   if (!text) return alert("Please enter some text first!");
-  // Mock proofreading
   resultDiv.innerText = `Proofread (mock):\n${text.replace(/\s+/g, ' ')}`;
 });
 
-// Rewrite button
+// Rewrite
 document.getElementById('rewrite-btn').addEventListener('click', () => {
   const text = inputText.value.trim();
   if (!text) return alert("Please enter some text first!");
-  // Mock rewrite
   resultDiv.innerText = `Rewritten (mock):\n${text.toUpperCase()}`;
 });
 
-// Transcribe / Upload button
+// Transcribe / Upload Image/Audio
 document.getElementById('transcribe-btn').addEventListener('click', () => {
+  // OPEN FILE PICKER directly, no text checks
   const fileInput = document.createElement('input');
   fileInput.type = 'file';
   fileInput.accept = 'audio/*,image/*';
