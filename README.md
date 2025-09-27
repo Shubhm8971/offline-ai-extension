@@ -57,5 +57,5 @@ Please open an issue first to discuss major changes or enhancements.
 
 MIT
 
-Built with ❤️ by the Offline AI Extension team during the Lablab hackathon.
+Built with ❤️ by the Offline AI Extension team during the Google hackathon.
 
