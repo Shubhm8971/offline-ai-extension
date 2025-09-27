@@ -1,62 +1,49 @@
 const inputText = document.getElementById('input-text');
 const resultDiv = document.getElementById('result');
 
-// --- Summarize ---
+// Summarize button
 document.getElementById('summarize-btn').addEventListener('click', () => {
   const text = inputText.value.trim();
-  if (!text) return alert("Please enter some text!");
-  
+  if (!text) return alert("Please enter some text first!");
   // Mock summary
-  const summary = text.split(".").slice(0, 2).join(".") + "...";
-  resultDiv.innerText = `[Mock] Summary:\n${summary}`;
+  const summary = text.split('.').slice(0, 2).join('.') + '...';
+  resultDiv.innerText = `Summary:\n${summary}`;
 });
 
-// --- Translate ---
+// Translate button
 document.getElementById('translate-btn').addEventListener('click', () => {
   const text = inputText.value.trim();
-  if (!text) return alert("Please enter some text!");
-  
+  if (!text) return alert("Please enter some text first!");
   // Mock translation
-  resultDiv.innerText = `[Mock] Translation:\n${text.split("").reverse().join("")}`;
+  resultDiv.innerText = `Translation (mock):\n${text.split('').reverse().join('')}`;
 });
 
-// --- Proofread ---
+// Proofread button
 document.getElementById('proofread-btn').addEventListener('click', () => {
   const text = inputText.value.trim();
-  if (!text) return alert("Please enter some text!");
-  
+  if (!text) return alert("Please enter some text first!");
   // Mock proofreading
-  const proofread = text.replace(/ teh /g, " the ").replace(/ recieve /g, " receive ");
-  resultDiv.innerText = `[Mock] Proofread:\n${proofread}`;
+  resultDiv.innerText = `Proofread (mock):\n${text.replace(/\s+/g, ' ')}`;
 });
 
-// --- Rewrite ---
+// Rewrite button
 document.getElementById('rewrite-btn').addEventListener('click', () => {
   const text = inputText.value.trim();
-  if (!text) return alert("Please enter some text!");
-  
+  if (!text) return alert("Please enter some text first!");
   // Mock rewrite
-  const rewritten = text.toUpperCase();
-  resultDiv.innerText = `[Mock] Rewritten:\n${rewritten}`;
+  resultDiv.innerText = `Rewritten (mock):\n${text.toUpperCase()}`;
 });
 
-// --- Transcribe (Audio) ---
+// Transcribe / Upload button
 document.getElementById('transcribe-btn').addEventListener('click', () => {
-  const input = document.createElement('input');
-  input.type = 'file';
-  input.accept = 'audio/*';
-  
-  input.onchange = () => {
-    const file = input.files[0];
-    if (!file) return alert("No file selected!");
-    
-    // Mock transcription
-    const reader = new FileReader();
-    reader.onload = () => {
-      resultDiv.innerText = `[Mock] Transcription of "${file.name}" successful!\nThis is dummy text.`;
-    };
-    reader.readAsArrayBuffer(file);
+  const fileInput = document.createElement('input');
+  fileInput.type = 'file';
+  fileInput.accept = 'audio/*,image/*';
+  fileInput.onchange = () => {
+    const file = fileInput.files[0];
+    if (file) {
+      resultDiv.innerText = `File selected:\n${file.name} (mock transcription or processing)`;
+    }
   };
-  
-  input.click();
+  fileInput.click();
 });
