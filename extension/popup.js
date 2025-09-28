@@ -1,45 +1,46 @@
-const inputText = document.getElementById('input-text');
-const resultDiv = document.getElementById('result');
+// Utility: mock output generator
+function setOutput(text) {
+  document.getElementById('summaryOutput').textContent = text;
+}
 
-// Summarize
-document.getElementById('summarize-btn').addEventListener('click', () => {
-  const text = inputText.value.trim();
-  if (!text) return alert("Please enter some text first!");
-  const summary = text.split('.').slice(0, 2).join('.') + '...';
-  resultDiv.innerText = `Summary:\n${summary}`;
+// ---- Summarize ----
+document.getElementById('summarizeBtn').addEventListener('click', () => {
+  setOutput('Mock Summary:\nThis is a concise summary of the selected content.');
 });
 
-// Translate
-document.getElementById('translate-btn').addEventListener('click', () => {
-  const text = inputText.value.trim();
-  if (!text) return alert("Please enter some text first!");
-  resultDiv.innerText = `Translation (mock):\n${text.split('').reverse().join('')}`;
+// ---- Translate ----
+document.getElementById('translateBtn').addEventListener('click', () => {
+  setOutput('Mock Translation:\nThis text has been “translated” to another language.');
 });
 
-// Proofread
-document.getElementById('proofread-btn').addEventListener('click', () => {
-  const text = inputText.value.trim();
-  if (!text) return alert("Please enter some text first!");
-  resultDiv.innerText = `Proofread (mock):\n${text.replace(/\s+/g, ' ')}`;
+// ---- Proofread ----
+document.getElementById('proofreadBtn').addEventListener('click', () => {
+  setOutput('Mock Proofread:\nNo grammar issues found. All good!');
 });
 
-// Rewrite
-document.getElementById('rewrite-btn').addEventListener('click', () => {
-  const text = inputText.value.trim();
-  if (!text) return alert("Please enter some text first!");
-  resultDiv.innerText = `Rewritten (mock):\n${text.toUpperCase()}`;
+// ---- Rewrite ----
+document.getElementById('rewriteBtn').addEventListener('click', () => {
+  setOutput('Mock Rewrite:\nHere is a different phrasing of the input text.');
 });
 
-// Transcribe / Upload Image/Audio
-document.getElementById('transcribe-btn').addEventListener('click', () => {
-  const fileInput = document.createElement('input');
-  fileInput.type = 'file';
-  fileInput.accept = 'audio/*,image/*';
-  fileInput.onchange = () => {
-    const file = fileInput.files[0];
-    if (file) {
-      resultDiv.innerText = `File selected:\n${file.name} (mock transcription or processing)`;
-    }
-  };
-  fileInput.click();
+// ---- Transcribe ---- (now uses file picker directly, no content script)
+document.getElementById('transcribeBtn').addEventListener('click', () => {
+  document.getElementById('audioInput').click();
+});
+
+document.getElementById('audioInput').addEventListener('change', () => {
+  const file = document.getElementById('audioInput').files[0];
+  if (!file) return;
+  setOutput(`Mock Transcription:\nSuccessfully received file "${file.name}". (Sample transcript here.)`);
+});
+
+// ---- Upload Image/Audio ---- (mock handler)
+document.getElementById('uploadBtn').addEventListener('click', () => {
+  document.getElementById('uploadInput').click();
+});
+
+document.getElementById('uploadInput').addEventListener('change', () => {
+  const file = document.getElementById('uploadInput').files[0];
+  if (!file) return;
+  setOutput(`Mock Upload:\nYou selected "${file.name}". Image/Audio processing would appear here.`);
 });
