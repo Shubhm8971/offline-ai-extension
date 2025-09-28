@@ -1,44 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
-  <title>Offline AI Extension</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      width: 320px;
-      padding: 10px;
-    }
-    textarea {
-      width: 100%;
-      height: 80px;
-      margin-bottom: 10px;
-    }
-    button {
-      display: block;
-      width: 100%;
-      margin: 5px 0;
-      padding: 8px;
-      cursor: pointer;
-    }
-    #result {
-      margin-top: 10px;
-      padding: 5px;
-      border: 1px solid #ccc;
-      min-height: 50px;
-      background: #f5f5f5;
-      white-space: pre-wrap;
-    }
-  </style>
+  <title>Offline AI Demo</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <textarea id="input-text" placeholder="Enter text here..."></textarea>
-  <button id="summarize-btn">Summarize</button>
-  <button id="translate-btn">Translate</button>
-  <button id="proofread-btn">Proofread</button>
-  <button id="rewrite-btn">Rewrite</button>
-  <button id="transcribe-btn">Upload Image/Audio</button>
-  <div id="result"></div>
+  <h2>Offline AI Demo</h2>
+
+  <button id="summarizeBtn">Summarize</button>
+  <button id="translateBtn">Translate</button>
+  <button id="proofreadBtn">Proofread</button>
+  <button id="rewriteBtn">Rewrite</button>
+  <button id="transcribeBtn">Transcribe</button>
+  <button id="uploadBtn">Upload Image/Audio</button>
+
+  <!-- Hidden file inputs for features that need them -->
+  <input type="file" id="audioInput" accept="audio/*" style="display:none">
+  <input type="file" id="uploadInput" accept="image/*,audio/*" style="display:none">
+
+  <div id="summaryOutput" class="output"></div>
 
   <script src="popup.js"></script>
 </body>
