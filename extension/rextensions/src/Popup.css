@@ -2,6 +2,8 @@ body {
   font-family: Arial, sans-serif;
   width: 300px;
   padding: 10px;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 /*.logo {
   display: none;
@@ -18,14 +20,17 @@ body {
 
 textarea {
   width: 100%;
-  height: 80px;
+  height: 60px;
 }
 
 button {
   margin: 5px 2px; /* kompromis između 5px 0 i 5px 2px */
-  padding: 6px 10px; /* sredina između 8px i 5px 10px */
-  width: 100%;
+  padding: 5px 5px; /* sredina između 8px i 5px 10px */
+  width: 10%;
   cursor: pointer;
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 20px;
 }
 
 .output {
@@ -34,6 +39,7 @@ button {
   border: 1px solid #ddd;
   min-height: 50px;
   background: #f5f5f5;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #result {
@@ -42,3 +48,89 @@ button {
   border: 1px solid #ccc;
   min-height: 50px;
 }
+body.light-body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+textarea.light-body {
+  background-color: white;
+}
+
+textarea.light-body {
+  background-color: white;
+}
+
+body.dark-body {
+  background-color: #000000;
+  color: #f0f0f0;
+}
+
+.mode-switch {
+  cursor: pointer;
+  position: relative;
+  width: 59px;
+  height: 26px;
+  margin-left: auto;
+}
+
+.switch-track {
+  background-color: #ccc;
+  border-radius: 13px;
+  width: 60%;
+  height: 40%;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+}
+
+.switch-track.dark {
+  background-color: #4f4f4f;
+}
+
+.switch-thumb {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.thumb-left {
+  transform: translateX(0);
+}
+
+.thumb-right {
+  transform: translateX(24px);
+}
+.text-input {
+  width: 100%;
+  height: 60px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 6px;
+  resize: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.light-textarea {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.dark-textarea {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+.light-output {
+  background-color: #f5f5f5;
+  color: #000000;
+}
+
+.dark-output {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+

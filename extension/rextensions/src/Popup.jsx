@@ -1,8 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import './Popup.css';
 
 function Popup() {
   const [output, setOutput] = useState("");
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Učitavanje moda iz localStorage pri mountu
+  useEffect(() => {
+    const savedMode = localStorage.getItem("darkMode");
+    if (savedMode === "true") setIsDarkMode(true);
+  }, []);
+
+  // Ažuriranje body klase i localStorage kad se mod promijeni
+  useEffect(() => {
+    document.body.classList.toggle('dark-body', isDarkMode);
+    document.body.classList.toggle('light-body', !isDarkMode);
+    localStorage.setItem("darkMode", isDarkMode);
+  }, [isDarkMode]);
 
   const sendMessageToContent = (type) => {
     if (typeof chrome !== "undefined" && chrome.tabs) {
@@ -25,25 +39,44 @@ function Popup() {
   };
 
   return (
-    <div className="popup-container">
-      <div className="logo-section">
-        <div className="logo" />
-        <h2>Offline AI Demo</h2>
+    <div className={`popup-container ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
+      <div className="top-bar">
+        <div className="logo-section">
+          <div className="logo" />
+          <div className="mode-switch" onClick={() => setIsDarkMode(!isDarkMode)}>
+            <div className={`switch-track ${isDarkMode ? 'dark' : 'light'}`}>
+              <div className={`switch-thumb ${isDarkMode ? 'thumb-right' : 'thumb-left'}`} />
+            </div>
+          </div>
+          <h2>Offline AI Demo</h2>
+        </div>
       </div>
 
-      <textarea id="input-text" placeholder="Enter text here..." />
+      <textarea
+        id="input-text"
+        className={`text-input ${isDarkMode ? 'dark-textarea' : 'light-textarea'}`}
+        placeholder="Enter text here..."
+      />
+
 
       <div className="button-group">
-        <button onClick={() => sendMessageToContent("SUMMARIZE_TEXT")}>Summarize</button>
-        <button onClick={() => sendMessageToContent("TRANSLATE_TEXT")}>Translate</button>
-        <button onClick={() => sendMessageToContent("PROOFREAD_TEXT")}>Proofread</button>
-        <button onClick={() => sendMessageToContent("TRANSCRIBE_AUDIO")}>Transcribe</button>
-        <button onClick={() => sendMessageToContent("REWRITE_TEXT")}>Rewrite</button>
-        <button onClick={() => sendMessageToContent("MULTIMODAL_UPLOAD")}>Upload Image/Audio</button>
-        <button onClick={() => sendMessageToContent("OPEN_SETTINGS")}>Settings</button>
+        <button className="Summarize" onClick={() => sendMessageToContent("SUMMARIZE_TEXT")}>📝</button>
+        <button className="Translate" onClick={() => sendMessageToContent("TRANSLATE_TEXT")}>🌍</button>
+        <button className="Proofread" onClick={() => sendMessageToContent("PROOFREAD_TEXT")}>🔍</button>
+        <button className="Transcribe" onClick={() => sendMessageToContent("TRANSCRIBE_AUDIO")}>🎙️</button>
+        <button className="Rewrite" onClick={() => sendMessageToContent("REWRITE_TEXT")}>✏️</button>
+        <button className="Upload Image/Audio" onClick={() => sendMessageToContent("MULTIMODAL_UPLOAD")}>📤</button>
+        <button className="Settings" onClick={() => sendMessageToContent("OPEN_SETTINGS")}>⚙️</button>
       </div>
 
-      <div className="output">{output}</div>
+    <div
+      id="output"
+      className={`output ${isDarkMode ? 'dark-output' : 'light-output'}`}
+      >
+      {output}
+    </div>
+
+
     </div>
   );
 }
