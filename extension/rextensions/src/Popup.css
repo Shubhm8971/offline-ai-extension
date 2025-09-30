@@ -28,6 +28,109 @@ button {
   cursor: pointer;
 }
 
+/* Modal Styles */
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+/* Template Categories */
+.categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.category-btn {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+.category-btn:hover {
+    background: #f5f5f5;
+}
+
+.category-btn.active {
+    background: #007bff;
+    color: white;
+}
+
+/* Template List */
+.template-list {
+    margin: 15px 0;
+}
+
+.template-item {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 5px 0;
+    cursor: pointer;
+    background: white;
+}
+
+.template-item:hover {
+    background: #f8f9fa;
+}
+
+/* Variable Inputs */
+.variable-input {
+    margin: 10px 0;
+}
+
+.variable-input label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.variable-input input,
+.variable-input textarea,
+.variable-input select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.variable-input textarea {
+    height: 60px;
+    resize: vertical;
+}
+
 .output {
   margin-top: 10px;
   padding: 5px;
