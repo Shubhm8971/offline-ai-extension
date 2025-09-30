@@ -1,55 +1,45 @@
 Offline AI Extension
 
-A lightweight Chrome extension that simulates AI-powered text and media processing fully locally. Designed for quick testing and demonstration without external APIs.
+Tagline: A lightweight desktop Chrome extension simulating AI-powered text utilities locally.
+
+About the Project
+
+Offline AI Extension is inspired by the idea of testing AI-powered features without relying on external APIs. It allows users to summarize, translate, proofread, rewrite, and transcribe content directly in the browser using mock outputs for fast local testing.
+
+During development, I learned how to structure Chrome extensions modularly, handle content scripts and popups, and implement multiple interactive features in a clean, maintainable way. The main challenge was making all features accessible and functional in a local, offline environment.
 
 Features
 
-Summarize: Condense selected text into a short summary.
+Summarize: Condenses selected text into a shorter version (mock summary).
 
-Translate: Mock translation of selected text.
+Translate: Converts text into another language (mock translation).
 
-Proofread: Highlight basic grammar and spelling issues.
+Proofread: Highlights and corrects grammatical issues in the selected text (mock proofread).
 
-Rewrite: Convert text to a cleaner, alternate version.
+Rewrite: Rephrases sentences for clarity or style (mock rewrite).
 
-Transcribe: Upload an audio file and get a mock transcription.
+Transcribe / Upload Audio: Accepts audio files for mock transcription.
 
-Upload Image/Audio: Mock processing of images or audio for demonstration purposes.
+All features work locally without requiring external API calls, ensuring smooth testing and development.
 
-Installation
+Built With
 
-Clone or download this repository.
+HTML, CSS, JavaScript
 
-Open Chrome and go to chrome://extensions/.
+Chrome Extension APIs (content scripts, popup, and messaging)
 
-Enable Developer mode (top-right).
+Getting Started
 
-Click Load unpacked and select this repository’s folder.
+Clone the repository.
 
-The extension will appear in your toolbar.
+Open Chrome and navigate to chrome://extensions.
 
-Usage
+Enable Developer Mode.
 
-Select text on a webpage for Summarize, Translate, Proofread, or Rewrite.
+Click Load unpacked and select the extension folder.
 
-Click the respective button in the extension popup to see a mock output.
+Open any webpage, select text (or upload audio for transcription), and test features.
 
-For Transcribe or Upload Image/Audio, click the button to select a file and view a mock result.
+Try It Out
 
-Structure
-
-popup.html – UI for the extension popup.
-
-popup.js – Handles button actions and mock outputs.
-
-content.js – (Optional) Placeholder for content script communication.
-
-README.md – Project overview and instructions.
-
-Notes
-
-Fully local: All outputs are mock simulations for demonstration.
-
-Modular structure: Easy to replace mock functions with real AI APIs later.
-
-No icons are used to keep it lightweight and simple.
+The extension is fully functional locally. All buttons provide mock outputs for testing.
