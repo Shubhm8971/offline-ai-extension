@@ -1,48 +1,72 @@
 Offline AI Extension
 
-Description:
-A lightweight, fully local Chrome extension simulating AI-powered text tools. Provides mock outputs for summarization, translation, proofreading, rewriting, and audio transcription. Designed for quick testing without relying on external APIs.
+A Chrome extension that simulates AI-powered text processing entirely offline using mock outputs. This allows for smooth testing, a clear UI flow, and a strong foundation for future integration with real AI APIs.
 
-Features
+✨ Features
 
-Summarize: Condenses selected text into a concise summary.
+Summarize → Quickly condenses selected text into a short summary.
 
-Translate: Converts selected text into another language (mock output).
+Translate → Simulates translating text into another language.
 
-Proofread: Checks selected text for grammar and clarity (mock output).
+Proofread → Detects and fixes mock spelling/grammar issues.
 
-Rewrite: Rewrites the selected text in a clearer or alternate style (mock output).
+Rewrite → Rephrases text into a cleaner version.
 
-Transcribe: Upload audio files to see mock transcriptions.
+Transcribe → Mock audio transcription from a file.
 
-Upload Image/Audio: Placeholder for future multimodal AI support.
+Upload Image/Audio → Mock input handling for multimodal features.
 
-Installation & Usage
+All outputs are mock-generated locally (no external APIs), making it simple to test functionality and UI without API restrictions.
 
-Clone or download the repository.
+📂 Project Structure
+offline-ai-extension/
+│── manifest.json       # Extension configuration
+│── popup.html          # Extension popup UI
+│── popup.js            # Button logic & mock AI simulation
+│── style.css           # Extension styling
+│── content.js          # Content script for page interactions
 
-Open Chrome and navigate to chrome://extensions.
+🚀 Getting Started
+
+Clone this repo:
+
+git clone https://github.com/Shubhm8971/offline-ai-extension.git
+cd offline-ai-extension
+
+
+Open Chrome and go to:
+chrome://extensions/
 
 Enable Developer Mode.
 
-Click Load Unpacked and select the extension/ folder.
+Click Load unpacked and select the offline-ai-extension/ folder.
 
-Click on the extension icon to open the popup.
+Pin the extension and test directly in your browser.
 
-Select text on any webpage (except for file upload features), then click the desired button to see mock results.
+🛠 Built With
 
-For audio transcription, click Transcribe or Upload Image/Audio and select a file.
+JavaScript (ES6+) – Core logic
 
-Technologies Used
+HTML5 & CSS3 – UI and layout
 
-HTML, CSS, JavaScript
+Chrome Extensions API – Browser integration
 
-Chrome Extensions API
+(React branch in progress for more modular code structure)
 
-Notes
+🌟 Inspiration
 
-Currently, all outputs are mock results for offline testing.
+We wanted to create a lightweight offline simulation of an AI extension so the team can:
 
-Designed for desktop Chrome usage.
+Experiment freely with UI/UX before API integration.
 
-Ready for integration with real AI APIs in the future.
+Build a clean, modular foundation.
+
+Test features in a realistic flow without relying on connectivity or quotas.
+
+📌 Next Steps
+
+Integrate real AI APIs (e.g., Gemini Nano / local models).
+
+Expand multimodal support (real image/audio input).
+
+Polish UI with React (work in progress).
