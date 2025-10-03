@@ -1,62 +1,74 @@
 Offline AI Extension
 
-A local AI-powered Chrome extension for text processing and mock outputs.
+🚀 Offline AI Extension is a Chrome extension that lets you summarize, translate, proofread, rewrite, and transcribe text and media directly on any webpage — all without needing to copy-paste into a separate app. It also supports custom user templates for flexible workflows.
 
-Features
+✨ Features
 
-Summarize – Generate concise summaries of selected text.
+Summarize – Generate concise summaries of highlighted text.
 
-Translate – Translate selected text into different languages (mock output).
+Translate – Instantly translate selected text into your chosen language.
 
-Proofread – Check grammar, spelling, and clarity of selected text (mock output).
+Proofread – Correct grammar, spelling, and style issues in text.
 
-Rewrite – Rephrase text for clarity, style, or tone (mock output).
+Rewrite – Rephrase text while preserving meaning and improving clarity.
 
-Transcribe – Upload audio files to convert speech to text (mock output).
+Transcribe – Upload audio files for transcription.
 
-Upload Image/Audio – Mock feature for future multimodal AI support.
+Image/Audio Upload – Upload files for processing (mock integration).
 
-All features currently provide local mock outputs for testing and development.
+Custom Templates (New!) – Define your own prompts to extend functionality.
 
-Installation
+Mock Outputs – Fully working demo flow with simulated AI responses.
+
+🛠️ Built With
+
+JavaScript (core logic & popup interactions)
+
+HTML/CSS (UI & styling)
+
+React (experimental branch) – for a more dynamic frontend integration
+
+Chrome Extensions API
+
+Mock AI API layer (for local testing)
+
+🚧 Challenges We Faced
+
+Ensuring the UI remained clean and simple with multiple AI actions.
+
+Getting consistent behavior across different browsers.
+
+Integrating React with the existing extension structure.
+
+Handling local-only mock outputs without breaking future real AI integration.
+
+📚 What We Learned
+
+How to structure a Chrome extension with both vanilla JS and React.
+
+Balancing user experience with multiple AI features.
+
+Effective branching and collaboration in GitHub.
+
+🚀 Try It Out
 
 Clone the repository:
 
-git clone https://github.com/Shubhm8971/offline-ai-extension.git
+git clone https://github.com/Shubhm8971/offline-ai-extension
 
 
-Open Chrome and navigate to chrome://extensions/.
+Open Chrome → chrome://extensions/ → Enable Developer Mode.
 
-Enable Developer mode.
+Click Load unpacked → Select the extension/ folder.
 
-Click Load unpacked and select the extension folder.
+Pin the extension and try out the features.
 
-The extension toolbar icon should appear in Chrome.
+👥 Team
 
-Usage
+Shubh Mittal – Core extension logic, README polish, feature integration.
 
-Open any webpage with selectable text.
+Aldina Karic – React integration, frontend testing.
 
-Click the extension icon in Chrome to open the popup.
+Rixony – Custom prompt templates branch.
 
-Select text and try the buttons: Summarize, Translate, Proofread, or Rewrite.
-
-For Transcribe, click the button to upload an audio file (mock functionality).
-
-Results appear directly in the popup below the buttons.
-
-Built With
-
-Languages: JavaScript, HTML, CSS
-
-Platform: Chrome Extension
-
-Tools: Mock local AI outputs for testing
-
-Future Work
-
-Integrate real AI APIs for all features.
-
-Add multimodal support (image & audio AI processing).
-
-Improve UI with React for better modularity and maintainability.
+Saifi – Initial setup & support (currently on exam break).
