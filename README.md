@@ -1,74 +1,106 @@
-Offline AI Extension
+🧠 Offline AI Chrome Extension
+🚀 Elevator Pitch
 
-🚀 Offline AI Extension is a Chrome extension that lets you summarize, translate, proofread, rewrite, and transcribe text and media directly on any webpage — all without needing to copy-paste into a separate app. It also supports custom user templates for flexible workflows.
+A fully local, AI-powered Chrome Extension that performs text summarization, translation, proofreading, rewriting, and audio/image transcription — all without relying on external APIs.
+Fast, private, and ideal for users who want AI assistance directly in the browser.
 
-✨ Features
+🪄 About the Project
+🎯 Inspiration
 
-Summarize – Generate concise summaries of highlighted text.
+We wanted to create a lightweight, privacy-friendly AI assistant that works offline, helping users process and interact with text directly from any webpage.
+Many AI tools depend on cloud APIs, which limits usability in low-connectivity areas and raises privacy concerns. This project brings AI capabilities right into your browser.
 
-Translate – Instantly translate selected text into your chosen language.
+🧩 What We Built
 
-Proofread – Correct grammar, spelling, and style issues in text.
+The extension allows users to:
 
-Rewrite – Rephrase text while preserving meaning and improving clarity.
+Summarize text from any webpage
 
-Transcribe – Upload audio files for transcription.
+Translate selected text between languages
 
-Image/Audio Upload – Upload files for processing (mock integration).
+Proofread for grammar and clarity improvements
 
-Custom Templates (New!) – Define your own prompts to extend functionality.
+Rewrite text for different tones or styles
 
-Mock Outputs – Fully working demo flow with simulated AI responses.
+Transcribe audio and image files (mock output for now)
 
-🛠️ Built With
+Upload files (image/audio) for multimodal processing
 
-JavaScript (core logic & popup interactions)
+Manage settings like theme, default language, and summary length
 
-HTML/CSS (UI & styling)
+All actions currently use mock AI responses for simulation, ensuring fast local testing.
 
-React (experimental branch) – for a more dynamic frontend integration
+🧠 What We Learned
 
-Chrome Extensions API
+Building modular, scalable Chrome extensions with clean separation of popup, content, and background scripts
 
-Mock AI API layer (for local testing)
+Designing a React-based UI upgrade for a modern interface
 
-🚧 Challenges We Faced
+Managing Git branching and merging across multiple feature sets
 
-Ensuring the UI remained clean and simple with multiple AI actions.
+Debugging extension permissions, local storage, and manifest updates
 
-Getting consistent behavior across different browsers.
+⚙️ How We Built It
 
-Integrating React with the existing extension structure.
+Started with a pure HTML/CSS/JS popup prototype
 
-Handling local-only mock outputs without breaking future real AI integration.
+Added mock AI logic for all features
 
-📚 What We Learned
+Transitioned to a React-based frontend for better scalability and component management
 
-How to structure a Chrome extension with both vanilla JS and React.
+Integrated a lightweight local simulation for instant feedback
 
-Balancing user experience with multiple AI features.
+🧱 Challenges We Faced
 
-Effective branching and collaboration in GitHub.
+Handling merge conflicts between branches (mock summary → React app)
 
-🚀 Try It Out
+Linking CSS to React JSX (current active task)
 
-Clone the repository:
+Maintaining functionality for each feature while improving design
+
+Ensuring cross-browser consistency for the popup
+
+🧩 Built With
+Category	Tools / Technologies
+Languages	JavaScript, HTML5, CSS3
+Frameworks / Libraries	React.js
+Platforms	Chrome Extension API, Localhost
+Version Control	Git & GitHub
+Design Tools	Figma, SVG assets
+Others	Mock AI simulation for local testing
+🧪 Try It Out
+
+🔗 GitHub Repository: offline-ai-extension
+
+🧩 How to Test Locally:
+
+Clone the repo:
 
 git clone https://github.com/Shubhm8971/offline-ai-extension
 
 
-Open Chrome → chrome://extensions/ → Enable Developer Mode.
+Open Chrome → chrome://extensions/
 
-Click Load unpacked → Select the extension/ folder.
+Enable Developer Mode
 
-Pin the extension and try out the features.
+Click Load Unpacked → Select the /extension folder
+
+Test the buttons on any webpage with selectable text
 
 👥 Team
 
-Shubh Mittal – Core extension logic, README polish, feature integration.
+Aldina Karic — Frontend & React UI
 
-Aldina Karic – React integration, frontend testing.
+Shubh Mittal — Core Extension Logic & Documentation
 
-Rixony – Custom prompt templates branch.
+Rixony — Custom Prompt Templates & Backend Structure
 
-Saifi – Initial setup & support (currently on exam break).
+🌟 Next Steps
+
+Finalize the React UI merge
+
+Add functional AI API integration
+
+Polish theme options in Settings
+
+Deploy the extension to Chrome Web Store
