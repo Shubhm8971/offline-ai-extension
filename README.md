@@ -1,106 +1,99 @@
-🧠 Offline AI Chrome Extension
-🚀 Elevator Pitch
+Offline AI Chrome Extension
+Overview
 
-A fully local, AI-powered Chrome Extension that performs text summarization, translation, proofreading, rewriting, and audio/image transcription — all without relying on external APIs.
-Fast, private, and ideal for users who want AI assistance directly in the browser.
+The Offline AI Chrome Extension is a desktop-first browser extension that simulates AI-powered tools locally. It allows users to:
 
-🪄 About the Project
-🎯 Inspiration
+Summarize selected text
 
-We wanted to create a lightweight, privacy-friendly AI assistant that works offline, helping users process and interact with text directly from any webpage.
-Many AI tools depend on cloud APIs, which limits usability in low-connectivity areas and raises privacy concerns. This project brings AI capabilities right into your browser.
+Translate text
 
-🧩 What We Built
+Proofread text
 
-The extension allows users to:
+Rewrite text
 
-Summarize text from any webpage
+Transcribe audio files
 
-Translate selected text between languages
+Upload images/audio for future enhancements
 
-Proofread for grammar and clarity improvements
+All features currently return mock outputs, making testing and development independent of external APIs.
 
-Rewrite text for different tones or styles
+Installation
 
-Transcribe audio and image files (mock output for now)
+Clone the repository:
 
-Upload files (image/audio) for multimodal processing
-
-Manage settings like theme, default language, and summary length
-
-All actions currently use mock AI responses for simulation, ensuring fast local testing.
-
-🧠 What We Learned
-
-Building modular, scalable Chrome extensions with clean separation of popup, content, and background scripts
-
-Designing a React-based UI upgrade for a modern interface
-
-Managing Git branching and merging across multiple feature sets
-
-Debugging extension permissions, local storage, and manifest updates
-
-⚙️ How We Built It
-
-Started with a pure HTML/CSS/JS popup prototype
-
-Added mock AI logic for all features
-
-Transitioned to a React-based frontend for better scalability and component management
-
-Integrated a lightweight local simulation for instant feedback
-
-🧱 Challenges We Faced
-
-Handling merge conflicts between branches (mock summary → React app)
-
-Linking CSS to React JSX (current active task)
-
-Maintaining functionality for each feature while improving design
-
-Ensuring cross-browser consistency for the popup
-
-🧩 Built With
-Category	Tools / Technologies
-Languages	JavaScript, HTML5, CSS3
-Frameworks / Libraries	React.js
-Platforms	Chrome Extension API, Localhost
-Version Control	Git & GitHub
-Design Tools	Figma, SVG assets
-Others	Mock AI simulation for local testing
-🧪 Try It Out
-
-🔗 GitHub Repository: offline-ai-extension
-
-🧩 How to Test Locally:
-
-Clone the repo:
-
-git clone https://github.com/Shubhm8971/offline-ai-extension
+git clone https://github.com/Shubhm8971/offline-ai-extension.git
 
 
-Open Chrome → chrome://extensions/
+Navigate to the extension folder:
+
+cd offline-ai-extension/extension
+
+
+Open Chrome and go to chrome://extensions/
 
 Enable Developer Mode
 
-Click Load Unpacked → Select the /extension folder
+Click Load unpacked and select the extension folder
 
-Test the buttons on any webpage with selectable text
+The extension should now appear in your browser toolbar.
 
-👥 Team
+Usage
 
-Aldina Karic — Frontend & React UI
+Open any web page.
 
-Shubh Mittal — Core Extension Logic & Documentation
+Highlight text you want to summarize, translate, proofread, or rewrite.
 
-Rixony — Custom Prompt Templates & Backend Structure
+Click the corresponding button in the popup.
 
-🌟 Next Steps
+For Transcribe or Upload, select a file from your computer (currently mocked).
 
-Finalize the React UI merge
+Mock results appear in the output area.
 
-Add functional AI API integration
+Features (Mock Implementation)
+Feature	Description
+Summarize	Returns the first two sentences of selected text.
+Translate	Shows a simulated translation of selected text.
+Proofread	Shows mock corrections and suggestions for selected text.
+Rewrite	Returns a simplified rewritten version of the text.
+Transcribe	Mocks transcription for audio files.
+Upload	Allows selection of image/audio files (mocked for now).
+Planned API Integration
 
-Polish theme options in Settings
+Once a free backend API is finalized, the extension will:
 
-Deploy the extension to Chrome Web Store
+Call the API for real summarization, translation, proofreading, rewriting, and transcription.
+
+Support additional file formats for multimodal input.
+
+Provide faster and more accurate results compared to the mock version.
+
+Project Structure
+offline-ai-extension/
+│
+├── extension/
+│   ├── popup.html
+│   ├── popup.js
+│   ├── style.css
+│   ├── manifest.json
+│   └── ... (other scripts)
+├── backend/
+│   └── api.py  (Flask server for future API integration)
+└── README.md
+
+Challenges Faced
+
+Simulating AI functionality locally without external APIs.
+
+Handling multiple buttons with different behaviors in the popup.
+
+Keeping the extension modular for easy future API integration.
+
+Future Work
+
+Integrate a free AI backend for real outputs.
+
+Add user-customizable prompts and templates.
+
+Improve UI/UX design and theme support.
+
+Add multimodal support for images and audio.
