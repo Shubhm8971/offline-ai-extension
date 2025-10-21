@@ -1,99 +1,70 @@
-Offline AI Chrome Extension
-Overview
+Offline AI Extension
 
-The Offline AI Chrome Extension is a desktop-first browser extension that simulates AI-powered tools locally. It allows users to:
+All-in-one AI assistant for your browser – fully offline mock simulation.
 
-Summarize selected text
+Features
 
-Translate text
+This extension currently simulates AI functionality locally (mock outputs), with support for the following features:
 
-Proofread text
+Summarize – Condenses selected text into a brief summary.
 
-Rewrite text
+Translate – Translates text between languages (mock).
 
-Transcribe audio files
+Proofread – Checks grammar and spelling (mock).
 
-Upload images/audio for future enhancements
+Rewrite – Rewrites text in a clearer or alternative style (mock).
 
-All features currently return mock outputs, making testing and development independent of external APIs.
+Transcribe – Upload audio files to simulate transcription.
 
-Installation
+Upload / Multimodal – Upload image or audio files for mock processing.
 
-Clone the repository:
+⚠️ Note: Currently, all features are simulated locally. Real AI API integration will be added later.
+
+Getting Started
+
+Clone the repository
 
 git clone https://github.com/Shubhm8971/offline-ai-extension.git
 
 
-Navigate to the extension folder:
+Load in Chrome
 
-cd offline-ai-extension/extension
+Open chrome://extensions/ in Chrome.
 
+Enable Developer mode.
 
-Open Chrome and go to chrome://extensions/
+Click Load unpacked and select the extension/ folder.
 
-Enable Developer Mode
+Test the features
 
-Click Load unpacked and select the extension folder
+Click the extension icon.
 
-The extension should now appear in your browser toolbar.
+Try each button (Summarize, Translate, Proofread, Rewrite, Transcribe, Upload).
 
-Usage
+All buttons produce local mock outputs.
 
-Open any web page.
+Planned Features (Future)
 
-Highlight text you want to summarize, translate, proofread, or rewrite.
+Real AI API integration for all features.
 
-Click the corresponding button in the popup.
+Improved styling and UX via React + Tailwind.
 
-For Transcribe or Upload, select a file from your computer (currently mocked).
+Backend support for live AI responses.
 
-Mock results appear in the output area.
+Custom user templates for summaries and translations.
 
-Features (Mock Implementation)
-Feature	Description
-Summarize	Returns the first two sentences of selected text.
-Translate	Shows a simulated translation of selected text.
-Proofread	Shows mock corrections and suggestions for selected text.
-Rewrite	Returns a simplified rewritten version of the text.
-Transcribe	Mocks transcription for audio files.
-Upload	Allows selection of image/audio files (mocked for now).
-Planned API Integration
+Contributing
 
-Once a free backend API is finalized, the extension will:
+Pull requests are welcome for bug fixes, UI improvements, or new features.
 
-Call the API for real summarization, translation, proofreading, rewriting, and transcription.
+Keep changes modular and avoid breaking existing mock functionality.
 
-Support additional file formats for multimodal input.
+Tech Stack
 
-Provide faster and more accurate results compared to the mock version.
+HTML, CSS, JavaScript (core mock extension)
 
-Project Structure
-offline-ai-extension/
-│
-├── extension/
-│   ├── popup.html
-│   ├── popup.js
-│   ├── style.css
-│   ├── manifest.json
-│   └── ... (other scripts)
-├── backend/
-│   └── api.py  (Flask server for future API integration)
-└── README.md
+React + Vite (for upcoming version)
 
-Challenges Faced
+Tailwind CSS for styling
 
-Simulating AI functionality locally without external APIs.
-
-Handling multiple buttons with different behaviors in the popup.
-
-Keeping the extension modular for easy future API integration.
-
-Future Work
-
-Integrate a free AI backend for real outputs.
-
-Add user-customizable prompts and templates.
-
-Improve UI/UX design and theme support.
-
-Add multimodal support for images and audio.
+Python backend (for future AI API integration)
