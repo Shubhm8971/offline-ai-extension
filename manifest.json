@@ -1,14 +1,10 @@
 {
   "manifest_version": 3,
-  "name": "Offline AI Demo",
+  "name": "Offline AI Extension",
   "version": "1.0",
-  "description": "Fully local mock AI demo – Summarize, Translate, Proofread, Rewrite, Transcribe (file picker).",
+  "description": "Test AI extension locally with mock outputs",
   "action": {
     "default_popup": "popup.html"
   },
-  "permissions": [
-    "storage",
-    "activeTab",
-    "scripting"
-  ]
+  "permissions": ["activeTab", "scripting"]
 }
