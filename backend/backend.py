@@ -1,16 +1,21 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
+
+# Allow requests from all origins
+CORS(app)
 
 @app.route('/summarize', methods=['POST'])
 def summarize():
     data = request.get_json()
     text = data.get('text', '')
-    if not text:
-        return jsonify({'summary': 'No text provided'})
-    
-    summary = text.split('.')[:2]  # mock: first two sentences
+    # mock summary
+    summary = text.split(".")[:2]
     return jsonify({'summary': '.'.join(summary) + '...'})
+
+# Repeat similar routes for translate, proofread, rewrite, transcribe
+
 
 @app.route('/translate', methods=['POST'])
 def translate():
