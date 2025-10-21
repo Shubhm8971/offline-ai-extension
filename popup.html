@@ -1,25 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8" />
   <title>Offline AI Extension</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h2>Offline AI Extension</h2>
-
-  <textarea id="inputText" placeholder="Enter or paste your text here..."></textarea>
-
-  <div class="button-container">
-    <button id="summarizeBtn">Summarize</button>
-    <button id="translateBtn">Translate</button>
-    <button id="proofreadBtn">Proofread</button>
-    <button id="rewriteBtn">Rewrite</button>
-    <button id="transcribeBtn">Transcribe Audio</button>
-  </div>
-
-  <div id="output" class="output"></div>
-
+  <textarea id="input-text" placeholder="Enter text here..."></textarea>
+  
+  <button id="summarize-btn">Summarize</button>
+  <button id="translate-btn">Translate</button>
+  <button id="proofread-btn">Proofread</button>
+  <button id="rewrite-btn">Rewrite</button>
+  <button id="transcribe-btn">Transcribe</button>
+  
+  <div id="result"></div>
   <script src="popup.js"></script>
 </body>
 </html>
