@@ -1,8 +1,8 @@
+import './App.css';
 import { useState, useEffect } from "react";
-import './Popup.css';
-import robotIcon from './assets/robot.svg';
+import robotIcon from "./assets/robotIcon.svg";
 
-function Popup() {
+function App() {
   const [output, setOutput] = useState("");
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [buttonPage, setButtonPage] = useState(0);
@@ -15,25 +15,13 @@ function Popup() {
   useEffect(() => {
     document.body.classList.toggle('dark-body', isDarkMode);
     document.body.classList.toggle('light-body', !isDarkMode);
-    localStorage.setItem("darkMode", isDarkMode);
+    localStorage.setItem("darkMode", isDarkMode.toString());
+
   }, [isDarkMode]);
 
-  const sendMessageToContent = (type) => {
-    if (typeof chrome !== "undefined" && chrome.tabs) {
-      chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-        chrome.tabs.sendMessage(tabs[0].id, { type }, (response) => {
-          if (chrome.runtime.lastError) {
-            alert("Content script not available.");
-            return;
-          }
-          if (response.error) {
-            alert(response.error);
-          } else {
-            setOutput(response.result);
-          }
-        });
-      });
-    }
+  const sendMessageToContent = (type: string) => {
+    // Lokalna simulacija bez chrome API-ja
+    setOutput(`Simulirani odgovor za: ${type}`);
   };
 
   const allButtons = [
@@ -69,6 +57,12 @@ function Popup() {
         </div>
       </div>
 
+      <div className="section-label">Input</div>
+      <textarea
+        className="text-input"
+        placeholder="Enter text here..."
+      />
+
       <div className="button-row">
         {buttonPage > 0 && (
           <button className="nav-button prev-button" onClick={() => setButtonPage(buttonPage - 1)}>
@@ -92,12 +86,6 @@ function Popup() {
         )}
       </div>
 
-      <div className="section-label">Input</div>
-      <textarea
-        className="text-input"
-        placeholder="Enter text here..."
-      />
-
       <div className="section-label">Output</div>
       <div
         className={`output ${output ? 'fade-in' : ''}`}
@@ -114,4 +102,4 @@ function Popup() {
   );
 }
 
-export default Popup;
+export default App;
