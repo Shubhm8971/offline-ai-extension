@@ -1,70 +1,105 @@
-Offline AI Extension
+🧠 Offline AI Assistant – Chrome Extension
 
-All-in-one AI assistant for your browser – fully offline mock simulation.
+An AI-powered Chrome extension that performs real-time content enhancement — summarization, translation, proofreading, rewriting, transcription, and file uploads — all locally and privately.
 
-Features
+Built with React + Vite for speed, TailwindCSS for styling, and a Python Flask backend for smart text and speech processing.
 
-This extension currently simulates AI functionality locally (mock outputs), with support for the following features:
+🚀 Features
 
-Summarize – Condenses selected text into a brief summary.
+✅ Summarize – Condenses long web articles or text selections into clear, concise summaries.
+✅ Translate – Translates content into multiple languages (default: English → user-selected).
+✅ Proofread – Corrects grammar, punctuation, and clarity errors.
+✅ Rewrite – Rephrases text while keeping the original meaning intact.
+✅ Transcribe – Converts uploaded audio files into accurate, readable text.
+✅ Upload – Allows users to upload images or audio for multimodal input processing.
+✅ Custom Templates (Planned) – Users can define their own prompt templates for specialized AI tasks.
+✅ Settings (In Progress) – Choose default translation language, theme mode, and summary length preferences.
 
-Translate – Translates text between languages (mock).
+🧩 Tech Stack
+🖥️ Frontend
 
-Proofread – Checks grammar and spelling (mock).
+React 18 + Vite – for fast and modular development
 
-Rewrite – Rewrites text in a clearer or alternative style (mock).
+TailwindCSS – clean, responsive UI
 
-Transcribe – Upload audio files to simulate transcription.
+TypeScript (TSX) – type safety and scalability
 
-Upload / Multimodal – Upload image or audio files for mock processing.
+Chrome Extension Manifest v3 – for browser integration
 
-⚠️ Note: Currently, all features are simulated locally. Real AI API integration will be added later.
+⚙️ Backend
 
-Getting Started
+Flask (Python) – lightweight REST API for text and audio processing
 
-Clone the repository
+CORS Enabled – to handle extension–backend communication
 
+Mock AI Outputs – local testing mode (real AI APIs to be added later)
+
+🔧 Installation & Setup
+1️⃣ Clone the repository
 git clone https://github.com/Shubhm8971/offline-ai-extension.git
+cd offline-ai-extension/extension
+
+2️⃣ Install dependencies
+npm install
+npm install --save-dev @types/chrome
+
+3️⃣ Run locally
+npm run dev
 
 
-Load in Chrome
+Then open http://localhost:3000
+ in your browser.
 
-Open chrome://extensions/ in Chrome.
+4️⃣ Build for Chrome
+npm run build
 
-Enable Developer mode.
+5️⃣ Load extension in Chrome
 
-Click Load unpacked and select the extension/ folder.
+Open chrome://extensions
 
-Test the features
+Enable Developer Mode
 
-Click the extension icon.
+Click Load unpacked
 
-Try each button (Summarize, Translate, Proofread, Rewrite, Transcribe, Upload).
+Select the dist folder
 
-All buttons produce local mock outputs.
+🔌 Backend Setup (Optional for API Testing)
 
-Planned Features (Future)
+Navigate to the backend folder:
 
-Real AI API integration for all features.
+cd backend
 
-Improved styling and UX via React + Tailwind.
 
-Backend support for live AI responses.
+Install dependencies:
 
-Custom user templates for summaries and translations.
+pip install -r requirements.txt
 
-Contributing
 
-Pull requests are welcome for bug fixes, UI improvements, or new features.
+Run Flask locally:
 
-Keep changes modular and avoid breaking existing mock functionality.
+python app.py
 
-Tech Stack
 
-HTML, CSS, JavaScript (core mock extension)
+The backend runs on http://127.0.0.1:5000
 
-React + Vite (for upcoming version)
+Ensure CORS is enabled for communication between the extension (localhost:3000) and backend (localhost:5000).
 
-Tailwind CSS for styling
+🧠 Planned Integrations (Free APIs)
+Task	API	Notes
+Summarization	Hugging Face Inference API	Supports BART, T5, Pegasus models
+Translation	LibreTranslate API	Free and open-source
+Proofreading	LanguageTool API	Grammar and spell check
+Transcription	Whisper.cpp or AssemblyAI (free tier)	Local/remote speech-to-text
+Rewrite	OpenRouter (GPT-style models)	Configurable fallback
+Upload	Local file + mock handler	Converts to text or base64
+🧑‍💻 Contributors
 
-Python backend (for future AI API integration)
+Aldina Karic – Frontend (React + Vite + TailwindCSS)
+
+Shubh Mittal – Backend (Flask + API Integration)
+
+Rixony – Documentation & Custom Prompt Templates
+
+🏆 Hackathon Goals
+
+We aim to build a fully offline-capable AI extension that showcases strong frontend polish, backend logic, and cross-team collaboration, while respecting user privacy and local data control.
